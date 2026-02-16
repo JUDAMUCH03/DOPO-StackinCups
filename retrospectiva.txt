@@ -1,0 +1,22 @@
+1. ¿Cuáles fueron los mini-ciclos definidos? Justifíquenlos.
+Definimos 3 mini-ciclos:
+	1.Estructura de la torres y de copas:Se implementó la creación de la torre y la gestión básica de tazas (pushCup, popCup, removeCup) junto con la visibilidad
+	2.Estructura de tapas:Se integraron las tapas (pushLid, removeLid)
+	3.Ordenamientos y consultas:Se implementó el ordenamiento (orderTower, reverseTower) y los métodos de consulta (height, stackingItems).
+2. ¿Cuál es el estado actual del proyecto en términos de mini-ciclos? ¿por qué?
+	Ciclo 1:La torre se crea correctamente y la visualiación de las tazas es correcta.
+	Ciclo 2:Se implementaron pero con algunas tapas hay un problema de visualización.
+	Ciclo 3:Hay problemas con los ordenamientos y la visualización de estos, las consultas a veces son incorrectas.
+3. ¿Cuál fue el tiempo total invertido por cada uno de ustedes? (Horas/Hombre)
+Ambos nos gastamos alrededor de 12 horas.
+4. ¿Cuál consideran fue el mayor logro? ¿Por qué?
+Lograr armar el simulador y entender aun mas el diagrama de secuencia que se nos dificultaba.
+5. ¿Cuál consideran que fue el mayor problema técnico? ¿Qué hicieron para resolverlo?
+El mayor problema fue resolver la lógica de armar el simulador, ya que armar las tasas se nos dificulto al inicio pero pudimos solucionarlo.
+6. ¿Qué hicieron bien como equipo? ¿Qué se comprometen a hacer para mejorar los resultados?
+La comunicación es muy importante para nosotros ya que si encontramos problemas los reportamos al instante, para mejorar nos comprometemos a seguir estudiando los temas del proyecto para entender aun mejor la lógica de lo que se pide y así poder implementarlo.
+7. Considerando las prácticas XP incluidas en los laboratorios. ¿cuál fue la más útil? ¿por qué?
+La practica que siempre usamos es la de Pair Programming, nos parece muy util ya que ambos aprendemos al tiempo y resolvemos los problemas mas fácilmente.
+8. ¿Qué referencias usaron? ¿Cuál fue la más útil? Incluyan citas con estándares adecuados.
+https://www.youtube.com/watch?v=jN8cn_5y_xE
+https://www.youtube.com/watch?v=WSyFvjUQHL4
