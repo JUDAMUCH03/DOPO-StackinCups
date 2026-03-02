@@ -1,0 +1,72 @@
+RETROSPECTIVA
+
+1. ¿Cuáles fueron los mini-ciclos definidos? Justifíquenlos.
+Definimos 4 mini-ciclos para esta entrega:
+1. Refactorización del Ciclo 1.
+Antes de implementar las extensiones, realizamos una refactorización completa del código del ciclo 1 según las correcciones de la profesora. Se mejoró la organización del astah, además de que ahora los bugs visuales que pasaban en el ciclo 1 se corrigieron.
+2. Mini-ciclo create.
+Se implementó la extensión que permite crear una torre indicando el número de tazas deseadas, sin incluir tapas inicialmente. Este mini-ciclo se enfocó en asegurar que la creación cumpliera correctamente con las reglas del sistema y que la estructura quedara preparada para futuras reorganizaciones.
+3. Mini-ciclo reorganize.
+Se desarrolló la funcionalidad para:
+-Intercambiar la posición de dos objetos en la torre.
+-Permitir tapar las tazas que tienen sus respectivas tapas en la torre.
+4. Mini-ciclo consult.
+Se implementó el método que permite consultar un movimiento de intercambio que reduzca la altura de la torre. Este mini-ciclo implicó analizar la lógica interna de la torre y evaluar posibles intercambios válidos.
+
+2. ¿Cuál es el estado actual del proyecto en términos de mini-ciclos? ¿Por qué?
+Mini-ciclo 1:
+Completado. El código quedó mejor estructurado y preparado para extensiones. Los diagramas en UML quedaron mejor estructuradas, y se implementaron en el propio método.
+Mini-ciclo 2:
+Completado y funcional. La torre se crea correctamente con el número indicado de tazas, si pasa de un n mayor a 7 no se vera ya que no cabe en la pantalla, pero la lógica si funciona.
+Mini-ciclo 3:
+Funcional, el intercambio si funciona, solo que tratamos que si una copa o tapa estaba dentro de otra mas grande se comportaran como una sola.
+Mini-ciclo 4:
+Implementado, arroja un intercambio que al usar swap si funciona.
+
+3. ¿Cuál fue el tiempo total invertido por cada uno de ustedes? (Horas/Hombre)
+Cada integrante invirtió aproximadamente 12 horas en este ciclo, debido principalmente al proceso de refactorización y ajuste del diseño previo antes de extender la funcionalidad.
+
+4. ¿Cuál consideran fue el mayor logro? ¿Por qué?
+El mayor logro fue lograr refactorizar correctamente el código del ciclo anterior y adaptarlo a los nuevos requerimientos sin romper la funcionalidad existente. Esto nos permitió entender mejor la importancia del diseño inicial y como los ciclos verdaderamente son importantes, por eso es que el primer miniciclo fue refactorizar lo que había quedado mal del pasado ciclo 1 y mejorar falencias como documentación y demás. Ademas aprendimos mas sobre las pruebas en Java.
+
+5. ¿Cuál consideran que fue el mayor problema técnico? ¿Qué hicieron para resolverlo?
+El mayor problema fue adaptar la lógica que se requería para hacer que las tapas y copas si se vieran correctamente, al hacer un intercambio lo hicieran de manera correcta, además de que a veces las tapas no se unian con la copa correspondiente. 
+
+6. ¿Qué hicieron bien como equipo? ¿Qué se comprometen a hacer para mejorar los resultados?
+Trabajamos con buena comunicación y coordinación. Utilizamos Pair Programming para discutir decisiones importantes de diseño y lógica antes de implementarlas.
+Nos comprometemos a:
+-Planificar mejor los mini-ciclos antes de comenzar a programar.
+-Diseñar primero pensando en la extensibilidad.
+-Fortalecer nuestras pruebas unitarias para detectar errores más temprano.
+
+7. Considerando las prácticas XP incluidas en los laboratorios. ¿Cuál fue la más útil? ¿Por qué?
+La práctica más útil fue Pair Programming, ya que nos permitió discutir soluciones en tiempo real, detectar errores más rápidamente y comprender mejor los conceptos de diseño orientado a objetos y refactorización. Además, facilitó el aprendizaje conjunto y redujo retrabajos.
+
+8. ¿Qué referencias usaron? ¿Cuál fue la más útil? Incluyan citas con estándares adecuados.
+https://www.w3schools.com/java/java_methods.asp
+https://www.w3schools.com/java/java_conditions.asp
+https://es.parasoft.com/blog/junit-tutorial-setting-up-writing-and-running-java-unit-tests/
+
+---------------------------------------------------------------------------------------------------------------------------
+En el punto 4 de los requisitos de entrega se nos pedia realizar un método para las pruebas, el que hicimos es el siguiente:
+
+accordingMSShouldCoverMultiplePairsCorrectly
+ 
+Descripcion: Al aplicar cover() con multiples parejas taza-tapa en la torre,
+todas las tapas deben quedar inmediatamente encima de su taza correspondiente.
+ 
+Tower t = new Tower(10, 20);
+t.pushCup(1);
+t.pushCup(2);
+t.pushLid(2);
+t.pushLid(1);
+t.cover();
+// Verificar que cup1 -> lid1 y cup2 -> lid2 esten adyacentes
+assertTrue(t.ok());
+String[][] stacking = t.stackingItems();
+// cup1, lid1, cup2, lid2 en ese orden
+assertEquals("cup", stacking[0][0]); assertEquals("1", stacking[0][1]);
+assertEquals("lid", stacking[1][0]); assertEquals("1", stacking[1][1]);
+assertEquals("cup", stacking[2][0]); assertEquals("2", stacking[2][1]);
+assertEquals("lid", stacking[3][0]); assertEquals("2", stacking[3][1]);
+ 
