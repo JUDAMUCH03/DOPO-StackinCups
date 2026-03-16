@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=TowerContest
+comment0.text=\r\n\ TowerContest\r\n\ Proporciona\ algoritmos\ para\ encontrar\ el\ orden\ de\ tazas\ que\ alcanza\ una\ altura\ espec\u00EDfica\r\n\ y\ permite\ la\ visualizaci\u00F3n\ a\ trav\u00E9s\ del\ simulador\ Tower.\r\n\r\n\ @author\ Daniel\ Felipe\ Sua\ y\ Juan\ David\ Munar\r\n
+comment1.params=n\ h
+comment1.target=java.lang.String\ solve(int,\ int)
+comment1.text=\r\n\ Resuelve\ el\ problema\ log\u00EDstico\ de\ encontrar\ el\ orden\ de\ las\ tazas.\r\n\ *\ @param\ n\ cantidad\ de\ tazas\ a\ utilizar\r\n\ @param\ h\ altura\ total\ objetivo\ de\ la\ torre\r\n\ @return\ String\ con\ las\ alturas\ de\ las\ tazas\ separadas\ por\ espacios,\ o\ "impossible"\r\n
+comment2.params=n\ h
+comment2.target=void\ simulate(int,\ int)
+comment2.text=\r\n\ Ejecuta\ el\ simulador\ visual\ de\ la\ torre\ basado\ en\ un\ objetivo\ de\ altura.\r\n\ Crea\ una\ instancia\ de\ Tower\ y\ a\u00F1ade\ las\ tazas\ secuencialmente.\r\n\ *\ @param\ n\ cantidad\ de\ tazas\ a\ utilizar\r\n\ @param\ h\ altura\ total\ objetivo\ de\ la\ torre\r\n
+numComments=3
