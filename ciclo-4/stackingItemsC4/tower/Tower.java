@@ -416,10 +416,13 @@ public class Tower {
                 prevCupNumber = cup.getNumber();
                 prevWasCup = true;
             } else if (item.isLid()) {
-                int lidBottomY = prevItemTopY;
-                if (cupTopYMap.containsKey(item.getNumber())) {
-                    lidBottomY = Math.min(prevItemTopY, cupTopYMap.get(item.getNumber()));
+                boolean nests = prevWasCup && item.getNumber() < prevCupNumber;
+                int lidBottomY = nests ? prevCupOuterBottomY - 1 : prevItemTopY;
+                
+                if (!nests && cupTopYMap.containsKey(item.getNumber())) {
+                    lidBottomY = Math.min(lidBottomY, cupTopYMap.get(item.getNumber()));
                 }
+                
                 int lidTopY = lidBottomY - item.getHeightCm();
                 if (lidTopY < currentTopY) currentTopY = lidTopY;
                 prevItemTopY = lidTopY;
@@ -712,8 +715,13 @@ public class Tower {
                 prevWasCup = true;
             } else if (item.isLid()) {
                 Lid lid = (Lid) item;
-                int lidTopY = prevItemTopY - lid.getHeightCm() * SCALE;
+                
+                boolean nests = prevWasCup && lid.getNumber() < prevCupNumber;
+                int outerBottomY = nests ? prevCupOuterBottomY - SCALE : prevItemTopY;
+                
+                int lidTopY = outerBottomY - lid.getHeightCm() * SCALE;
                 lid.drawAt(centerX - lid.getWidthPx() / 2, lidTopY);
+                
                 prevItemTopY = lidTopY;
                 prevWasCup = false;
             }
@@ -722,7 +730,7 @@ public class Tower {
     
     /*
      * Verifica todas las FragileCup de la torre y elimina las que tengan
-     * 3 o mas elementos encima. Usa isFragile() para evitar instanceof.
+     * 3 o mas elementos encima.
      */
     private void checkFragile() {
         for (int i = items.size() - 1; i >= 0; i--) {
